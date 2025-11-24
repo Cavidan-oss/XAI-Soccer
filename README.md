@@ -47,7 +47,7 @@ This project replicates the live win-probability mechanism used by major analyti
 
 ## Setup
 1. Clone this repository
-2. Create a virtual environment and activate it
+2. Create a virtual environment and activate it or use global python environment
 3. Install dependencies:
    ```bash
    pip install -r requirements.txt
