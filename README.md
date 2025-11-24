@@ -34,30 +34,6 @@ This project replicates the live win-probability mechanism used by major analyti
   - Match View page (win prob progression + SHAP/LIME)
   - Simulation page (change features and see new win probs)
 
-## Project structure (expected)
-  XAI-Soccer/
-│
-├─ src/
-│   ├─ function.py              # feature building, predictions, SHAP/LIME helpers
-│   └─ …
-│
-├─ dashboard/
-│   ├─ Home.py                  # main Streamlit home
-│   ├─ pages/
-│   │   ├─ Match_View.py        # match page with win probs + SHAP/LIME
-│   │   ├─ Simulation.py        # what-if simulation page
-│   │   └─ …
-│
-├─ processed-data/
-│   ├─ sample_games.csv         # match table used on Home page
-│   ├─ *.csv                    # processed per-match minute states
-│   └─ logos/                   # optional team logos
-│
-├─ models/
-│   └─ lgb_model.pkl            # saved trained model
-│
-├─ requirements.txt
-└─ README.md
 
 ## Setup
 1. Clone this repository
@@ -66,7 +42,7 @@ This project replicates the live win-probability mechanism used by major analyti
    ```bash
    pip install -r requirements.txt
    ```
-4. Download the Wyscout dataset from Figshare (link in project proposal) and place it in the `wyscout_figshare_data/` folder.
+4. Download the Wyscout dataset from Figshare (https://figshare.com/collections/Soccer_match_event_dataset/4415000/5)  and place it in the `wyscout_figshare_data/` folder.
 5. Run the notebooks in order:
    - `1-data_preprocessing.ipynb`
    - `2-building-features.ipynb`
