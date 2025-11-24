@@ -53,7 +53,7 @@ This project replicates the live win-probability mechanism used by major analyti
    ```  
 
 
-## Detailed Documentation
+## Documentation
 
 ### Modelling
 Building minute-by-minute win predictions is hard because most detailed live match data is owned by private companies. Thankfully, Wyscout makes a rich event dataset available for research, and this project starts by processing that data. First, the raw events are split into individual matches and converted into simple per-minute signals such as goals so far and yellow cards so far. Next, using information from previous matches, we add broader context features like a team’s average xT (a proxy for how well a team progresses the ball into dangerous areas), along with live game context such as red cards, home/away identification, and other match-state indicators. Finally, all of these pieces are merged into a single processed dataset that is used for modeling.
@@ -73,8 +73,9 @@ However, explanation alone isn’t enough, because football is highly dynamic. T
 ### Dashboard Integration
 Lastly, to avoid manually tweaking inputs and checking predictions minute by minute, I built a Streamlit dashboard that lets users simulate matches interactively and inspect feature contributions at each moment using SHAP and LIME. The app has three main pages. The Home page allows users to select a match to explore. The Match View page shows the evolving win probabilities over time, along with SHAP and LIME explanations for each minute of the chosen match. Finally, the What-If Simulation page lets users adjust the input features and instantly see how the predicted outcomes would change under different match conditions.
 
-[img]
-
+![Dashboard](img/streamlit_matchview.png)
 
 ## Future Work and Limitation
 There are several clear directions to improve this project. First, the dataset is still quite small because most high-resolution match data is owned and sold by commercial providers. At the moment, the model relies only on Premier League 2017–2018 matches, so expanding to larger and more recent seasons would make the predictions more reliable and better aligned with today’s game. Second, the current feature set is intentionally simple and extracted only from the Wyscout events, but it can be enriched with additional signals, including external data such as player-level attributes, team tactics, or fatigue and scheduling effects. Finally, the biggest upgrade would be deploying the model for real-time matches. To do that properly, the system would need a live data feed that provides ball and player positions so the same in-game features (especially xT-related ones) can be computed on the fly.
+
+
