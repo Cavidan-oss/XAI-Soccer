@@ -1,0 +1,6 @@
+match_id,home_team_id,home_team,away_team_id,away_team,home_score,away_score
+2499737,1624,Tottenham Hotspur,1610,Chelsea,0,1
+2499754,1625,Manchester City,1612,Liverpool,5,0
+2499830,1609,Arsenal,1624,Tottenham Hotspur,2,0
+2499943,1612,Liverpool,1625,Manchester City,4,3
+2500031,1610,Chelsea,1624,Tottenham Hotspur,1,3
