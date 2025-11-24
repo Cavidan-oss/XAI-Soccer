@@ -1,6 +1,6 @@
 # XAI-Soccer 
 
-[Headline Image](img/headline.png)
+![Headline Image](img/headline.png)
 
 
 Explainable, minute-by-minute win probability modeling for football matches (Premier League baseline).
