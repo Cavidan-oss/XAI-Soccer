@@ -65,7 +65,8 @@ The model uses a mix of game-state, discipline, and advanced xT features. Game-s
 ### Explainability
 Since the model is already trained, the next step is to understand what actually drives its decisions. For that reason, I applied SHAP and LIME to interpret the predictions. These methods gave me both global explanations, which show overall feature importance across matches, and local explanations, which justify a specific prediction at a specific minute. From the plots, it’s clear that team xT is one of the strongest drivers. This makes sense because xT reflects how effectively a team progresses the ball into dangerous areas, so it captures both current form and overall quality. Player differential also shows up as a major factor, which is intuitive: when a team goes down to 10 or 9 players, it becomes much harder to cover space and defend, and that disadvantage often translates into a higher chance of losing.
 
-[img]
+![Shap Overall](img/shap_overall.png)
+
 
 However, explanation alone isn’t enough, because football is highly dynamic. The state of a match can shift dramatically from minute to minute ,  a single mistake, tackle, or sudden goal can flip the outlook. That’s why I built an interactive simulation layer, so the model can be explored in real time and users can see how win probabilities and feature drivers change as the match evolves.
 
