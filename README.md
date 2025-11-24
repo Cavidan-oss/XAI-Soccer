@@ -37,6 +37,8 @@ This project replicates the live win-probability mechanism used by major analyti
   - Home page listing matches
   - Match View page (win prob progression + SHAP/LIME)
   - Simulation page (change features and see new win probs)
+- **Src**
+  -- Contains reproducible code for data processing, feature building, modeling, explainability, and dashboard
 
 
 ## Setup
@@ -94,3 +96,6 @@ In addition to the core functionality, I added a What-If Scenario page where use
 There are several clear directions to improve this project. First, the dataset is still quite small because most high-resolution match data is owned and sold by commercial providers. At the moment, the model relies only on Premier League 2017–2018 matches, so expanding to larger and more recent seasons would make the predictions more reliable and better aligned with today’s game. Second, the current feature set is intentionally simple and extracted only from the Wyscout events, but it can be enriched with additional signals, including external data such as player-level attributes, team tactics, or fatigue and scheduling effects. Finally, the biggest upgrade would be deploying the model for real-time matches. To do that properly, the system would need a live data feed that provides ball and player positions so the same in-game features (especially xT-related ones) can be computed on the fly.
 
 
+Here is a directly copy-ready Markdown snippet you can paste into your README:
+
+*AI Use: This project utilized the GPT-5 model for developing parts of the Streamlit application and refining the text in the README and notebooks. All notebooks include appropriate citations indicating where AI assistance was used. A full record of the conversation is available at the following [conversation Link](https://chatgpt.com/share/69236ad9-3374-8011-8f40-acaf6e31fa50).*
