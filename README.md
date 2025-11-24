@@ -51,3 +51,11 @@ This project replicates the live win-probability mechanism used by major analyti
    ```bash
    streamlit run dashboard/Home.py
    ```  
+
+
+## Detailed Documentation
+Building minute-by-minute win predictions is hard because most detailed live match data is owned by private companies. Thankfully, Wyscout makes a rich event dataset available for research, and this project starts by processing that data. First, the raw events are split into individual matches and converted into simple per-minute signals such as goals so far and yellow cards so far. Next, using information from previous matches, we add broader context features like a team’s average xT (a proxy for how well a team progresses the ball into dangerous areas), along with live game context such as red cards, home/away identification, and other match-state indicators. Finally, all of these pieces are merged into a single processed dataset that is used for modeling.
+
+The project implements a Win Probability Model that estimates the chance of a team winning, drawing, or losing at any moment in a match. Rather than predicting the final score directly, we train a regression model to estimate each team’s probability of scoring in the remaining minutes based on the current game state. These scoring probabilities are then passed into a simulation engine, which runs many iterations of the rest of the match to convert scoring chances into Home Win, Draw, and Away Win probabilities.
+
+The model uses a mix of game-state, discipline, and advanced xT features. Game-state features capture the live situation, such as score_differential, goals_scored, minutes_remaining, time_interval, and whether the team is at home. Advanced xT features include avg_team_xt as a measure of team strength, avg_opp_xt as a measure of opponent strength, and running_xt_differential to reflect live momentum. Discipline features account for numerical advantage and cautions, including player_differential (red cards), own_yellow_cards, and opposition_yellow_cards.
