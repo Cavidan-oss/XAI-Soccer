@@ -5,7 +5,11 @@
 
 Explainable, minute-by-minute win probability modeling for football matches (Premier League baseline).
 
+Currently, almost every major competition uses probability-based ML models to show viewers the likely outcome of a match at different moments. However, these systems offer almost no transparency, which makes it difficult for both fans and smaller clubs to understand what drives those predictions, what’s going wrong during a match, and what could be adjusted.
+
 This project replicates the live win-probability mechanism used by major analytics platforms. It predicts **per-team scoring probability at each minute**, then simulates the rest of the game to produce **Home Win / Draw / Away Win** probabilities. Each probability is explained using **SHAP** and **LIME**, and a **Streamlit dashboard** lets you explore matches and run what-if simulations.
+
+[Watch the demo on YouTube](https://youtu.be/OO64UQUwe_s)
 
 
 ## What this project does
