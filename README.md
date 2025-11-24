@@ -1,4 +1,8 @@
-# XAI-Soccer ⚽📊  
+# XAI-Soccer 
+
+[Headline Image](img/headline.png)
+
+
 Explainable, minute-by-minute win probability modeling for football matches (Premier League baseline).
 
 This project replicates the live win-probability mechanism used by major analytics platforms. It predicts **per-team scoring probability at each minute**, then simulates the rest of the game to produce **Home Win / Draw / Away Win** probabilities. Each probability is explained using **SHAP** and **LIME**, and a **Streamlit dashboard** lets you explore matches and run what-if simulations.
@@ -74,6 +78,17 @@ However, explanation alone isn’t enough, because football is highly dynamic. T
 Lastly, to avoid manually tweaking inputs and checking predictions minute by minute, I built a Streamlit dashboard that lets users simulate matches interactively and inspect feature contributions at each moment using SHAP and LIME. The app has three main pages. The Home page allows users to select a match to explore. The Match View page shows the evolving win probabilities over time, along with SHAP and LIME explanations for each minute of the chosen match. Finally, the What-If Simulation page lets users adjust the input features and instantly see how the predicted outcomes would change under different match conditions.
 
 ![Dashboard](img/streamlit_matchview.png)
+
+
+For the purpose of this showcasing simulation , I have choosen to focus on the 5 Premier League matches from the 2017-2018 season that I find interesting. However, the codebase is designed to be easily extensible to other leagues and seasons if the data is available.
+
+![Dashboard](img/home.png)
+
+
+In addition to the core functionality, I added a What-If Scenario page where users can adjust key match features—such as score differential, player differential, and xT momentum—to observe how these changes influence the predicted win probabilities. This interactive component aimed at to enhance user engagement with the XAI features and provides a clearer understanding of how different match conditions would affect the model’s predictions.
+
+![Dashboard](img/what_if.png)
+
 
 ## Future Work and Limitation
 There are several clear directions to improve this project. First, the dataset is still quite small because most high-resolution match data is owned and sold by commercial providers. At the moment, the model relies only on Premier League 2017–2018 matches, so expanding to larger and more recent seasons would make the predictions more reliable and better aligned with today’s game. Second, the current feature set is intentionally simple and extracted only from the Wyscout events, but it can be enriched with additional signals, including external data such as player-level attributes, team tactics, or fatigue and scheduling effects. Finally, the biggest upgrade would be deploying the model for real-time matches. To do that properly, the system would need a live data feed that provides ball and player positions so the same in-game features (especially xT-related ones) can be computed on the fly.
