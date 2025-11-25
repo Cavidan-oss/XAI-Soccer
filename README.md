@@ -24,7 +24,7 @@ This project replicates the live win-probability mechanism used by major analyti
    - inspect SHAP/LIME drivers at any minute  
    - simulate feature changes and see updated win probabilities
 
-[Watch the demo on YouTube](https://www.oracle.com/a/ocom/img/rc01-premier-league-match-insights-win-probability-v4.jpg)
+![Watch the demo on YouTube](https://www.oracle.com/a/ocom/img/rc01-premier-league-match-insights-win-probability-v4.jpg)
 
 ## Core features
 
