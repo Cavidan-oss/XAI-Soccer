@@ -31,7 +31,7 @@ WYSCOUT_DATA_FOLDER = "wyscout_figshare_data"
 # processed holdout / match-state data
 p = pd.read_csv("sample_games.csv")
 
-with open(os.path.join(WYSCOUT_DATA_FOLDER, 'teams.json')) as f:
+with open(os.path.join('teams.json')) as f:
     teams_meta = json.load(f)
 
 team_names_dict = {t['wyId']: t['name'] for t in teams_meta}
